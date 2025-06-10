@@ -1,0 +1,56 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000020157618ad0 .scope module, "tb_inverter" "tb_inverter" 2 4;
+ .timescale -9 -12;
+v0000020157736ab0_0 .var "A", 0 0;
+RS_0000020157736fc8 .resolv tri, L_000002015761bcd0, L_000002015761bd40;
+v000002015761bc30_0 .net8 "Y", 0 0, RS_0000020157736fc8;  2 drivers, strength-aware
+S_0000020157736740 .scope module, "uut" "inverter" 2 8, 3 1 0, S_0000020157618ad0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /OUTPUT 1 "b";
+L_00000201576166e0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_000002015761bcd0 .functor PMOS 1, L_00000201576166e0, v0000020157736ab0_0, C4<0>, C4<0>;
+L_0000020157736b50 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_000002015761bd40 .functor NMOS 1, L_0000020157736b50, v0000020157736ab0_0, C4<0>, C4<0>;
+v00000201577368d0_0 .net "a", 0 0, v0000020157736ab0_0;  1 drivers
+v0000020157616430_0 .net8 "b", 0 0, RS_0000020157736fc8;  alias, 2 drivers, strength-aware
+v0000020157736970_0 .net8 "gnd", 0 0, L_0000020157736b50;  1 drivers, strength-aware
+v0000020157736a10_0 .net8 "vdd", 0 0, L_00000201576166e0;  1 drivers, strength-aware
+    .scope S_0000020157618ad0;
+T_0 ;
+    %vpi_call 2 12 "$dumpfile", "inverter.vcd" {0 0 0};
+    %vpi_call 2 13 "$dumpvars", 32'sb00000000000000000000000000000000, S_0000020157618ad0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000020157736ab0_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000020157736ab0_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000020157736ab0_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000020157736ab0_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 20 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0000020157618ad0;
+T_1 ;
+    %vpi_call 2 24 "$monitor", "Time = %0t, A = %b, Y = %b", $time, v0000020157736ab0_0, v000002015761bc30_0 {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "tb_inv.v";
+    "top.v";
