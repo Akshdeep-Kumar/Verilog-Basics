@@ -1,0 +1,90 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000002c12cff2df0 .scope module, "tb_or" "tb_or" 2 3;
+ .timescale -9 -12;
+v000002c12d070020_0 .var "A", 0 0;
+v000002c12d070340_0 .var "B", 0 0;
+RS_000002c12d029008 .resolv tri, L_000002c12d015d00, L_000002c12d016080;
+v000002c12d0703e0_0 .net8 "Y", 0 0, RS_000002c12d029008;  2 drivers, strength-aware
+S_000002c12cff2f80 .scope module, "uut" "OR" 2 7, 3 3 0, S_000002c12cff2df0;
+ .timescale -9 -12;
+    .port_info 0 /OUTPUT 1 "c";
+    .port_info 1 /INPUT 1 "a";
+    .port_info 2 /INPUT 1 "b";
+L_000002c12d016010 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_000002c12d015bb0 .functor PMOS 1, L_000002c12d016010, v000002c12d070020_0, C4<0>, C4<0>;
+L_000002c12d015d70 .functor PMOS 1, L_000002c12d015bb0, v000002c12d070340_0, C4<0>, C4<0>;
+L_000002c12d0160f0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_000002c12d016160 .functor NMOS 1, L_000002c12d0160f0, v000002c12d070020_0, C4<0>, C4<0>;
+L_000002c12d015c20 .functor NMOS 1, L_000002c12d0160f0, v000002c12d070340_0, C4<0>, C4<0>;
+v000002c12d0ec940_0 .net "a", 0 0, v000002c12d070020_0;  1 drivers
+v000002c12d0243e0_0 .net "b", 0 0, v000002c12d070340_0;  1 drivers
+v000002c12d024480_0 .net8 "c", 0 0, RS_000002c12d029008;  alias, 2 drivers, strength-aware
+v000002c12d06fd00_0 .net8 "gnd", 0 0, L_000002c12d0160f0;  1 drivers, strength-aware
+v000002c12d06fc60_0 .net8 "vdd", 0 0, L_000002c12d016010;  1 drivers, strength-aware
+v000002c12d0702a0_0 .net8 "x", 0 0, L_000002c12d015bb0;  1 drivers, strength-aware
+RS_000002c12d028fd8 .resolv tri, L_000002c12d015d70, L_000002c12d016160, L_000002c12d015c20;
+v000002c12d070200_0 .net8 "y", 0 0, RS_000002c12d028fd8;  3 drivers, strength-aware
+S_000002c12d0ec5d0 .scope module, "inv_net" "inverter" 3 22, 4 1 0, S_000002c12cff2f80;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /OUTPUT 1 "b";
+L_000002c12d015de0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_000002c12d015d00 .functor PMOS 1, L_000002c12d015de0, RS_000002c12d028fd8, C4<0>, C4<0>;
+L_000002c12d016240 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_000002c12d016080 .functor NMOS 1, L_000002c12d016240, RS_000002c12d028fd8, C4<0>, C4<0>;
+v000002c12d015020_0 .net8 "a", 0 0, RS_000002c12d028fd8;  alias, 3 drivers, strength-aware
+v000002c12d0ec760_0 .net8 "b", 0 0, RS_000002c12d029008;  alias, 2 drivers, strength-aware
+v000002c12d0ec800_0 .net8 "gnd", 0 0, L_000002c12d016240;  1 drivers, strength-aware
+v000002c12d0ec8a0_0 .net8 "vdd", 0 0, L_000002c12d015de0;  1 drivers, strength-aware
+    .scope S_000002c12cff2df0;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002c12d070020_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002c12d070340_0, 0, 1;
+    %end;
+    .thread T_0;
+    .scope S_000002c12cff2df0;
+T_1 ;
+    %delay 7000, 0;
+    %load/vec4 v000002c12d070020_0;
+    %inv;
+    %store/vec4 v000002c12d070020_0, 0, 1;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_000002c12cff2df0;
+T_2 ;
+    %delay 11000, 0;
+    %load/vec4 v000002c12d070340_0;
+    %inv;
+    %store/vec4 v000002c12d070340_0, 0, 1;
+    %jmp T_2;
+    .thread T_2;
+    .scope S_000002c12cff2df0;
+T_3 ;
+    %vpi_call 2 19 "$dumpfile", "or.vcd" {0 0 0};
+    %vpi_call 2 20 "$dumpvars", 32'sb00000000000000000000000000000000, S_000002c12cff2df0 {0 0 0};
+    %delay 50000, 0;
+    %vpi_call 2 22 "$finish" {0 0 0};
+    %end;
+    .thread T_3;
+    .scope S_000002c12cff2df0;
+T_4 ;
+    %vpi_call 2 26 "$monitor", "Time = %0t ns: A=%b, B=%b \342\206\222 Y=%b", $time, v000002c12d070020_0, v000002c12d070340_0, v000002c12d0703e0_0 {0 0 0};
+    %end;
+    .thread T_4;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "tb_or.v";
+    "top.v";
+    "./inv.v";
