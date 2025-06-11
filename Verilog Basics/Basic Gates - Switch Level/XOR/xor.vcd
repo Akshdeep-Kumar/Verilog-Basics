@@ -1,0 +1,118 @@
+$date
+	Wed Jun 11 18:26:41 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_xor $end
+$var wire 1 ! Y $end
+$var reg 1 " A $end
+$var reg 1 # B $end
+$scope module uut $end
+$var wire 1 " a $end
+$var wire 1 # b $end
+$var wire 1 ! c $end
+$var wire 1 $ gnd $end
+$var wire 1 % i $end
+$var wire 1 & j $end
+$var wire 1 ' l $end
+$var wire 1 ( m $end
+$var wire 1 ) n $end
+$var wire 1 * vdd $end
+$scope module inv_net1 $end
+$var wire 1 " a $end
+$var wire 1 % b $end
+$var wire 1 + gnd $end
+$var wire 1 , vdd $end
+$upscope $end
+$scope module inv_net2 $end
+$var wire 1 # a $end
+$var wire 1 & b $end
+$var wire 1 - gnd $end
+$var wire 1 . vdd $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+1.
+0-
+1,
+0+
+1*
+0)
+z(
+1'
+1&
+1%
+0$
+0#
+0"
+0!
+$end
+#7000
+1!
+0%
+1"
+#11000
+z'
+0!
+0(
+z)
+0&
+1#
+#14000
+1'
+1!
+1%
+0"
+#21000
+z'
+0!
+0%
+1"
+#22000
+1'
+1!
+z(
+0)
+1&
+0#
+#28000
+0!
+1%
+0"
+#33000
+0(
+1!
+z)
+0&
+1#
+#35000
+z'
+0!
+0%
+1"
+#42000
+1'
+1!
+1%
+0"
+#44000
+z(
+0!
+0)
+1&
+0#
+#49000
+1!
+0%
+1"
+#50000
