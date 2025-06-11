@@ -1,0 +1,84 @@
+$date
+	Wed Jun 11 13:58:40 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_and $end
+$var wire 1 ! Y $end
+$var reg 1 " A $end
+$var reg 1 # B $end
+$scope module uut $end
+$var wire 1 " a $end
+$var wire 1 # b $end
+$var wire 1 ! c $end
+$var wire 1 $ gnd $end
+$var wire 1 % vdd $end
+$var wire 1 & x $end
+$var wire 1 ' y $end
+$scope module inv_net $end
+$var wire 1 ' a $end
+$var wire 1 ! b $end
+$var wire 1 ( gnd $end
+$var wire 1 ) vdd $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+1)
+0(
+1'
+z&
+1%
+0$
+0#
+0"
+0!
+$end
+#7000
+1"
+#11000
+1!
+0'
+0&
+1#
+#14000
+0!
+1'
+0"
+#21000
+1!
+0'
+1"
+#22000
+0!
+1'
+z&
+0#
+#28000
+0"
+#33000
+0&
+1#
+#35000
+1!
+0'
+1"
+#42000
+0!
+1'
+0"
+#44000
+z&
+0#
+#49000
+1"
+#50000
