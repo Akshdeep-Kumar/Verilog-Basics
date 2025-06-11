@@ -1,0 +1,75 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000002c1dbe6b400 .scope module, "tb_nor" "tb_nor" 2 3;
+ .timescale -9 -12;
+v000002c1dbefdad0_0 .var "A", 0 0;
+v000002c1dbefdb70_0 .var "B", 0 0;
+RS_000002c1dbeb7038 .resolv tri, L_000002c1dbefe810, L_000002c1dbefe730, L_000002c1dbefe110;
+v000002c1dbefdc10_0 .net8 "Y", 0 0, RS_000002c1dbeb7038;  3 drivers, strength-aware
+S_000002c1dbe6b590 .scope module, "uut" "NOR" 2 7, 3 1 0, S_000002c1dbe6b400;
+ .timescale -9 -12;
+    .port_info 0 /OUTPUT 1 "c";
+    .port_info 1 /INPUT 1 "a";
+    .port_info 2 /INPUT 1 "b";
+L_000002c1dbe83390 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_000002c1dbe834f0 .functor PMOS 1, L_000002c1dbe83390, v000002c1dbefdad0_0, C4<0>, C4<0>;
+L_000002c1dbefe810 .functor PMOS 1, L_000002c1dbe834f0, v000002c1dbefdb70_0, C4<0>, C4<0>;
+L_000002c1dbe6c9d0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_000002c1dbefe730 .functor NMOS 1, L_000002c1dbe6c9d0, v000002c1dbefdad0_0, C4<0>, C4<0>;
+L_000002c1dbefe110 .functor NMOS 1, L_000002c1dbe6c9d0, v000002c1dbefdb70_0, C4<0>, C4<0>;
+v000002c1dbe6b720_0 .net "a", 0 0, v000002c1dbefdad0_0;  1 drivers
+v000002c1dbe830e0_0 .net "b", 0 0, v000002c1dbefdb70_0;  1 drivers
+v000002c1dbefd850_0 .net8 "c", 0 0, RS_000002c1dbeb7038;  alias, 3 drivers, strength-aware
+v000002c1dbefd8f0_0 .net8 "gnd", 0 0, L_000002c1dbe6c9d0;  1 drivers, strength-aware
+v000002c1dbefd990_0 .net8 "vdd", 0 0, L_000002c1dbe83390;  1 drivers, strength-aware
+v000002c1dbefda30_0 .net8 "x", 0 0, L_000002c1dbe834f0;  1 drivers, strength-aware
+    .scope S_000002c1dbe6b400;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002c1dbefdad0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002c1dbefdb70_0, 0, 1;
+    %end;
+    .thread T_0;
+    .scope S_000002c1dbe6b400;
+T_1 ;
+    %delay 7000, 0;
+    %load/vec4 v000002c1dbefdad0_0;
+    %inv;
+    %store/vec4 v000002c1dbefdad0_0, 0, 1;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_000002c1dbe6b400;
+T_2 ;
+    %delay 11000, 0;
+    %load/vec4 v000002c1dbefdb70_0;
+    %inv;
+    %store/vec4 v000002c1dbefdb70_0, 0, 1;
+    %jmp T_2;
+    .thread T_2;
+    .scope S_000002c1dbe6b400;
+T_3 ;
+    %vpi_call 2 19 "$dumpfile", "nor.vcd" {0 0 0};
+    %vpi_call 2 20 "$dumpvars", 32'sb00000000000000000000000000000000, S_000002c1dbe6b400 {0 0 0};
+    %delay 50000, 0;
+    %vpi_call 2 22 "$finish" {0 0 0};
+    %end;
+    .thread T_3;
+    .scope S_000002c1dbe6b400;
+T_4 ;
+    %vpi_call 2 26 "$monitor", "Time = %0t ns: A=%b, B=%b \342\206\222 Y=%b", $time, v000002c1dbefdad0_0, v000002c1dbefdb70_0, v000002c1dbefdc10_0 {0 0 0};
+    %end;
+    .thread T_4;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "tb_nor.v";
+    "top.v";
