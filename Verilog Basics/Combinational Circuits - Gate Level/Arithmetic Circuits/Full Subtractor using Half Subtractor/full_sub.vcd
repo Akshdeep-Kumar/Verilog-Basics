@@ -1,0 +1,226 @@
+$date
+	Thu Jun 12 18:07:55 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_full_sub $end
+$var wire 1 ! DIFF $end
+$var wire 1 " BORR $end
+$var reg 1 # A $end
+$var reg 1 $ B $end
+$var reg 1 % C $end
+$scope module uut $end
+$var wire 1 # a $end
+$var wire 1 $ b $end
+$var wire 1 " borr $end
+$var wire 1 % c $end
+$var wire 1 & k $end
+$var wire 1 ' j $end
+$var wire 1 ( i $end
+$var wire 1 ! diff $end
+$scope module HS1 $end
+$var wire 1 # a $end
+$var wire 1 $ b $end
+$var wire 1 ' borr $end
+$var wire 1 ( diff $end
+$var wire 1 ) i $end
+$var wire 1 * j $end
+$var wire 1 + k $end
+$upscope $end
+$scope module HS2 $end
+$var wire 1 ( a $end
+$var wire 1 % b $end
+$var wire 1 & borr $end
+$var wire 1 ! diff $end
+$var wire 1 , i $end
+$var wire 1 - j $end
+$var wire 1 . k $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+1.
+1-
+1,
+1+
+1*
+1)
+0(
+0'
+0&
+0%
+0$
+0#
+0"
+0!
+$end
+#5000
+1!
+0-
+1(
+0*
+1#
+#8000
+0!
+0"
+1-
+0&
+0,
+1.
+1%
+#10000
+1"
+1!
+1&
+0.
+1,
+0(
+1*
+0#
+#11000
+0!
+0&
+1.
+0,
+1-
+1(
+1'
+0+
+1$
+#15000
+1!
+1&
+0.
+1,
+1"
+0(
+0'
+1+
+0)
+1*
+1#
+#16000
+0"
+0!
+0&
+1.
+0%
+#20000
+1!
+0-
+1"
+1(
+1'
+0+
+1)
+0#
+#22000
+0!
+1-
+0"
+0(
+0'
+1+
+0$
+#24000
+1"
+1!
+1&
+0.
+1%
+#25000
+0"
+0!
+0&
+1.
+0,
+1-
+1(
+0*
+1#
+#30000
+1"
+1!
+1&
+0.
+1,
+0(
+1*
+0#
+#32000
+0"
+0!
+0&
+1.
+0%
+#33000
+1!
+0-
+1"
+1(
+1'
+0+
+1$
+#35000
+0!
+1-
+0"
+0(
+0'
+1+
+0)
+1*
+1#
+#40000
+0,
+1-
+1(
+1'
+1"
+0+
+0!
+0&
+1)
+1.
+0#
+1%
+#44000
+1!
+1&
+0.
+1,
+1"
+0(
+0'
+1+
+0$
+#45000
+0"
+0!
+0&
+1.
+0,
+1-
+1(
+0*
+1#
+#48000
+1!
+0-
+1,
+0%
+#50000
+0!
+1-
+0(
+1*
+0#
