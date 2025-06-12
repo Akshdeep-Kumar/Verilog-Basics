@@ -1,0 +1,99 @@
+$date
+	Thu Jun 12 17:08:21 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_half_sub $end
+$var wire 1 ! DIFF $end
+$var wire 1 " BORR $end
+$var reg 1 # A $end
+$var reg 1 $ B $end
+$scope module uut $end
+$var wire 1 # a $end
+$var wire 1 $ b $end
+$var wire 1 " borr $end
+$var wire 1 ! diff $end
+$var wire 1 % i $end
+$var wire 1 & j $end
+$var wire 1 ' k $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+1'
+1&
+1%
+0$
+0#
+0"
+0!
+$end
+#7000
+1!
+0&
+1#
+#11000
+0!
+1&
+0"
+0%
+1'
+1$
+#14000
+1!
+1"
+0'
+1%
+0#
+#21000
+0!
+0"
+1'
+0%
+1&
+1#
+#22000
+1!
+0&
+1%
+0$
+#28000
+0!
+1&
+0#
+#33000
+1!
+1"
+0'
+1$
+#35000
+0!
+0"
+1'
+0%
+1&
+1#
+#42000
+1!
+1"
+0'
+1%
+0#
+#44000
+0!
+0"
+1'
+0$
+#49000
+1!
+0&
+1#
+#50000
