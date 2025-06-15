@@ -5,7 +5,7 @@ module tb_enc_8x3;
     reg [7:0] d;
     wire [2:0] y;
 
-    enc_8x3 E1(y, d);
+    enc_8x3 DUT(y, d);
 
     initial begin
         $dumpfile("enc_8x3.vcd");
