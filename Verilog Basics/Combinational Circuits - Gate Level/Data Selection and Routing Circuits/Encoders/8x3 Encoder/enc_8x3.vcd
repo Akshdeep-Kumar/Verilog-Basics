@@ -1,0 +1,74 @@
+$date
+	Sun Jun 15 15:32:08 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_enc_8x3 $end
+$var wire 3 ! y [2:0] $end
+$var reg 8 " d [7:0] $end
+$scope module E1 $end
+$var wire 8 # d [7:0] $end
+$var wire 3 $ y [2:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 $
+b1 #
+b1 "
+b0 !
+$end
+#10000
+b1 !
+b1 $
+b10 "
+b10 #
+#20000
+b10 !
+b10 $
+b100 "
+b100 #
+#30000
+b11 !
+b11 $
+b1000 "
+b1000 #
+#40000
+b100 !
+b100 $
+b10000 "
+b10000 #
+#50000
+b101 !
+b101 $
+b100000 "
+b100000 #
+#60000
+b110 !
+b110 $
+b1000000 "
+b1000000 #
+#70000
+b111 !
+b111 $
+b10000000 "
+b10000000 #
+#80000
+b11 !
+b11 $
+b1100 "
+b1100 #
+#90000
+b111 !
+b111 $
+b11111111 "
+b11111111 #
+#100000
